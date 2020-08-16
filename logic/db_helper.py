@@ -78,22 +78,3 @@ def get_null_sentiment():
     return temp
 
 
-
-if __name__ == '__main__':
-    # create_table(_query['cr_tweet'])
-    # create_table(_query['cr_sentiment'])
-
-    # ins_upd_table(_query['ins_tweet'], [(5000, '2020-08-21', 'riyadfebrian', 'ajsdfsdfsdf'),
-    #                                   (7000, '2020-08-22', 'bakemono', 'llppplplplpl')])
-
-    # ins_upd_table(_query['ins_sentiment'], [(1112,), (10000,)])
-
-    # insert_table(_query['up_sentiment'], [(60, 1244)])
-
-    # a = pd.read_sql_query(_query['null_sentiment'], connect())
-
-    a = get_sentiment('2020-08-10', '2020-08-21')
-    print(a)
-    print(len(a.value.unique()))
-
-    print('Berhasil')
