@@ -59,12 +59,15 @@ if __name__ == '__main__':
 
         elif answers['menu'] == 'Update Sentiment Value':
             unlabeled = get_null_sentiment()
-            result = sentiment_analysis(unlabeled)  # Added Value
+            if len(unlabeled) == 0:
+                print("All tweets has been analyzed")
+            else:
+                result = sentiment_analysis(unlabeled)  # Added Value
 
-            result = result.loc[:, ['value', 'tweet_id']]
-            update_sentiment(result.values.tolist())
+                result = result.loc[:, ['value', 'tweet_id']]
+                update_sentiment(result.values.tolist())
 
-            print('Update Sentiment Success')
+                print('Update Sentiment Success')
 
         elif answers['menu'] == 'Show Data':
             st_dt, ed_dt = date_range_menu()
